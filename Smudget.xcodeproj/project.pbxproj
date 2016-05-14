@@ -25,6 +25,8 @@
 		368109851CB22BE600E3FAA4 /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368109841CB22BE600E3FAA4 /* PieChartViewController.swift */; };
 		368719851CB7677300D4780D /* SmudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368719841CB7677300D4780D /* SmudgetUITests.swift */; };
 		3687198D1CB768FB00D4780D /* SmudgetUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3687198C1CB768FB00D4780D /* SmudgetUITest.swift */; };
+		FA69A7A51CE6AE8C00404A42 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA69A7A41CE6AE8C00404A42 /* CoreData.framework */; };
+		FA69A7AC1CE6AF1500404A42 /* Smudget.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA69A7AA1CE6AF1500404A42 /* Smudget.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,8 @@
 		368719841CB7677300D4780D /* SmudgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmudgetUITests.swift; sourceTree = "<group>"; };
 		368719861CB7677300D4780D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3687198C1CB768FB00D4780D /* SmudgetUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmudgetUITest.swift; sourceTree = "<group>"; };
+		FA69A7A41CE6AE8C00404A42 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FA69A7AB1CE6AF1500404A42 /* Smudget.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Smudget.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA69A7A51CE6AE8C00404A42 /* CoreData.framework in Frameworks */,
 				368109801CB2270C00E3FAA4 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +137,8 @@
 		360915AC1CB497B10011B312 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				360915A81CB4962D0011B312 /* Main.storyboard */,
+				368109161CB204BA00E3FAA4 /* LaunchScreen.storyboard */,
 				366E11461CB3763000DEEFC5 /* BudgetTableViewCell.swift */,
 				360915AA1CB497A40011B312 /* BudgetItemTableViewCell.swift */,
 			);
@@ -163,6 +170,7 @@
 		368109011CB204BA00E3FAA4 = {
 			isa = PBXGroup;
 			children = (
+				FA69A7A41CE6AE8C00404A42 /* CoreData.framework */,
 				368109711CB2270600E3FAA4 /* Charts.xcodeproj */,
 				3681090C1CB204BA00E3FAA4 /* Smudget */,
 				368719831CB7677300D4780D /* SmudgetUITests */,
@@ -182,15 +190,12 @@
 		3681090C1CB204BA00E3FAA4 /* Smudget */ = {
 			isa = PBXGroup;
 			children = (
+				3681090D1CB204BA00E3FAA4 /* AppDelegate.swift */,
+				FA69A7A91CE6AED500404A42 /* Resources */,
 				368719761CB763F200D4780D /* UI Tests */,
 				360915AC1CB497B10011B312 /* View */,
 				366E114B1CB37E4C00DEEFC5 /* Controller */,
 				366E114A1CB37E4600DEEFC5 /* Model */,
-				3681090D1CB204BA00E3FAA4 /* AppDelegate.swift */,
-				360915A81CB4962D0011B312 /* Main.storyboard */,
-				368109141CB204BA00E3FAA4 /* Assets.xcassets */,
-				368109161CB204BA00E3FAA4 /* LaunchScreen.storyboard */,
-				368109191CB204BA00E3FAA4 /* Info.plist */,
 			);
 			path = Smudget;
 			sourceTree = "<group>";
@@ -221,6 +226,16 @@
 				368719861CB7677300D4780D /* Info.plist */,
 			);
 			path = SmudgetUITests;
+			sourceTree = "<group>";
+		};
+		FA69A7A91CE6AED500404A42 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				368109141CB204BA00E3FAA4 /* Assets.xcassets */,
+				368109191CB204BA00E3FAA4 /* Info.plist */,
+				FA69A7AA1CE6AF1500404A42 /* Smudget.xcdatamodeld */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +389,7 @@
 				360915AB1CB497A40011B312 /* BudgetItemTableViewCell.swift in Sources */,
 				3681090E1CB204BA00E3FAA4 /* AppDelegate.swift in Sources */,
 				366E11491CB37D6600DEEFC5 /* NewBudgetViewController.swift in Sources */,
+				FA69A7AC1CE6AF1500404A42 /* Smudget.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +595,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA69A7AA1CE6AF1500404A42 /* Smudget.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA69A7AB1CE6AF1500404A42 /* Smudget.xcdatamodel */,
+			);
+			currentVersion = FA69A7AB1CE6AF1500404A42 /* Smudget.xcdatamodel */;
+			path = Smudget.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 368109021CB204BA00E3FAA4 /* Project object */;
 }
