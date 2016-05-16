@@ -42,7 +42,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gnI-Jf-01u" kind="show" id="XG4-gR-cj6"/>
+                                    <action selector="newBudget_Clicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XEy-KM-tzm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpL-Gd-1Cq">
@@ -89,69 +89,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qZX-99-L8m"/>
+                    <connections>
+                        <segue destination="dZj-1k-Jyf" kind="show" identifier="newBudgetSegue" id="cFV-2h-xqK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="350" y="355"/>
-        </scene>
-        <!--New Budget-->
-        <scene sceneID="vt2-rx-DiW">
-            <objects>
-                <viewController title="New Budget" id="gnI-Jf-01u" customClass="NewBudgetViewController" customModule="Smudget" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hkd-7A-Pud"/>
-                        <viewControllerLayoutGuide type="bottom" id="ptF-y9-zYY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="czv-BJ-ZYz">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Budget Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HYk-G6-aDT">
-                                <rect key="frame" x="20" y="114" width="442" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter new budget title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmT-ht-904">
-                                <rect key="frame" x="20" y="79" width="560" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvn-G9-9dY">
-                                <rect key="frame" x="470" y="114" width="110" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.93333333333333335" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="I5i-zh-y0c"/>
-                                </constraints>
-                                <state key="normal" title="Create!">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="dZj-1k-Jyf" kind="show" identifier="newToBudgetSegue" id="Mht-F0-JxD"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.9690788857" blue="0.90231596889999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="ptF-y9-zYY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xvn-G9-9dY" secondAttribute="bottom" id="3sk-ea-blM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xvn-G9-9dY" secondAttribute="trailing" id="9W5-cI-etf"/>
-                            <constraint firstItem="xvn-G9-9dY" firstAttribute="leading" secondItem="HYk-G6-aDT" secondAttribute="trailing" constant="8" id="Lum-uH-97K"/>
-                            <constraint firstItem="xvn-G9-9dY" firstAttribute="top" secondItem="HmT-ht-904" secondAttribute="bottom" constant="8" id="OSJ-6B-cIH"/>
-                            <constraint firstItem="HYk-G6-aDT" firstAttribute="top" secondItem="HmT-ht-904" secondAttribute="bottom" constant="8" id="VyK-gx-hdn"/>
-                            <constraint firstItem="HmT-ht-904" firstAttribute="top" secondItem="hkd-7A-Pud" secondAttribute="bottom" constant="15" id="b6n-qT-7ce"/>
-                            <constraint firstItem="HmT-ht-904" firstAttribute="trailing" secondItem="czv-BJ-ZYz" secondAttribute="trailingMargin" id="iTP-MU-99t"/>
-                            <constraint firstItem="ptF-y9-zYY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HYk-G6-aDT" secondAttribute="bottom" id="jcp-KN-f8D"/>
-                            <constraint firstItem="HmT-ht-904" firstAttribute="leading" secondItem="czv-BJ-ZYz" secondAttribute="leadingMargin" id="jdc-So-3Nn"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="HYk-G6-aDT" secondAttribute="leading" id="sKh-1G-N4E"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="budgetTitleTextField" destination="HYk-G6-aDT" id="jnY-L7-qFu"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KKm-R9-erf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1091" y="-20"/>
         </scene>
         <!--Select Existing Budget-->
         <scene sceneID="cbW-GF-JcB">
@@ -197,7 +141,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UX1-Sc-0p3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="694"/>
+            <point key="canvasLocation" x="1096" y="898"/>
         </scene>
         <!--Budget-->
         <scene sceneID="zkX-0e-BBt">
@@ -1048,7 +992,7 @@
         <image name="Time-Filled" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mht-F0-JxD"/>
+        <segue reference="cFV-2h-xqK"/>
         <segue reference="zfb-XG-D1m"/>
     </inferredMetricsTieBreakers>
 </document>

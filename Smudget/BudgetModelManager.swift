@@ -67,45 +67,45 @@ class BudgetModelManager {
     
     func saveBudgets() {
     
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context = appDelegate.managedObjectContext
-        
-        for budget in budgets {
-            
-            let budgetEntity = NSEntityDescription.entityForName(BudgetModelManager.ENTITY_BUDGET, inManagedObjectContext: context)
-            let budgetObject = NSManagedObject(entity: budgetEntity!, insertIntoManagedObjectContext: context)
-            
-            budgetObject.setValue(budget.title, forKey: BudgetModelManager.ATTRIB_TITLE)
-            
-            for expense in budget.expenses {
-                
-                let expenseEntity = NSEntityDescription.entityForName(BudgetModelManager.ENTITY_EXPENSE, inManagedObjectContext: context)
-                let expenseObject = NSManagedObject(entity: expenseEntity!, insertIntoManagedObjectContext: context)
-                
-                expenseObject.setValue(expense.name, forKey: BudgetModelManager.ATTRIB_NAME)
-                expenseObject.setValue(expense.value, forKey: BudgetModelManager.ATTRIB_VALUE)
-                
-                expenseObject.setValue(NSSet(object: budgetObject), forKey: BudgetModelManager.RELATN_BUDGET)
-            }
-            
-            for income in budget.incomes {
-                
-                let incomeEntity = NSEntityDescription.entityForName(BudgetModelManager.ENTITY_INCOME, inManagedObjectContext: context)
-                let incomeObject = NSManagedObject(entity: incomeEntity!, insertIntoManagedObjectContext: context)
-                
-                incomeObject.setValue(income.name, forKey: BudgetModelManager.ATTRIB_NAME)
-                incomeObject.setValue(income.value, forKey: BudgetModelManager.ATTRIB_VALUE)
-                
-                incomeObject.setValue(NSSet(object: budgetObject), forKey: BudgetModelManager.RELATN_BUDGET)
-            }
-        }
-        
-        do {
-            try context.save()
-        
-        } catch {
-            print("There was an error saving data: \(error)")
-        }
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        let context = appDelegate.managedObjectContext
+//        
+//        for budget in budgets {
+//            
+//            let budgetEntity = NSEntityDescription.entityForName(BudgetModelManager.ENTITY_BUDGET, inManagedObjectContext: context)
+//            let budgetObject = NSManagedObject(entity: budgetEntity!, insertIntoManagedObjectContext: context)
+//            
+//            budgetObject.setValue(budget.title, forKey: BudgetModelManager.ATTRIB_TITLE)
+//            
+//            for expense in budget.expenses {
+//                
+//                let expenseEntity = NSEntityDescription.entityForName(BudgetModelManager.ENTITY_EXPENSE, inManagedObjectContext: context)
+//                let expenseObject = NSManagedObject(entity: expenseEntity!, insertIntoManagedObjectContext: context)
+//                
+//                expenseObject.setValue(expense.name, forKey: BudgetModelManager.ATTRIB_NAME)
+//                expenseObject.setValue(expense.value, forKey: BudgetModelManager.ATTRIB_VALUE)
+//                
+//                expenseObject.setValue(NSSet(object: budgetObject), forKey: BudgetModelManager.RELATN_BUDGET)
+//            }
+//            
+//            for income in budget.incomes {
+//                
+//                let incomeEntity = NSEntityDescription.entityForName(BudgetModelManager.ENTITY_INCOME, inManagedObjectContext: context)
+//                let incomeObject = NSManagedObject(entity: incomeEntity!, insertIntoManagedObjectContext: context)
+//                
+//                incomeObject.setValue(income.name, forKey: BudgetModelManager.ATTRIB_NAME)
+//                incomeObject.setValue(income.value, forKey: BudgetModelManager.ATTRIB_VALUE)
+//                
+//                incomeObject.setValue(NSSet(object: budgetObject), forKey: BudgetModelManager.RELATN_BUDGET)
+//            }
+//        }
+//        
+//        do {
+//            try context.save()
+//        
+//        } catch {
+//            print("There was an error saving data: \(error)")
+//        }
     }
     
     
