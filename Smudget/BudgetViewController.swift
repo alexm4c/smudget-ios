@@ -39,7 +39,7 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func addExpense_Clicked(sender: UIButton) {
         promptForNewBudgetItem("expense", addItem: {
             (item: Budget.BudgetItem) in
-            self.budget.incomes.append(item)
+            self.budget.expenses.append(item)
             self.update()
         })
     }

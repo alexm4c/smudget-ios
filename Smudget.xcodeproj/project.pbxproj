@@ -9,14 +9,11 @@
 /* Begin PBXBuildFile section */
 		360915A91CB4962D0011B312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360915A81CB4962D0011B312 /* Main.storyboard */; };
 		360915AB1CB497A40011B312 /* BudgetItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360915AA1CB497A40011B312 /* BudgetItemTableViewCell.swift */; };
-		360915D31CB4F1720011B312 /* AddBudgetItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360915D21CB4F1720011B312 /* AddBudgetItemViewController.swift */; };
 		366E11471CB3763000DEEFC5 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E11461CB3763000DEEFC5 /* BudgetTableViewCell.swift */; };
-		366E11491CB37D6600DEEFC5 /* NewBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E11481CB37D6600DEEFC5 /* NewBudgetViewController.swift */; };
 		366E114F1CB382AF00DEEFC5 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E114E1CB382AF00DEEFC5 /* Budget.swift */; };
 		366E11511CB3906000DEEFC5 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E11501CB3906000DEEFC5 /* MainMenuViewController.swift */; };
 		366E11531CB390B100DEEFC5 /* ExistingBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E11521CB390B100DEEFC5 /* ExistingBudgetViewController.swift */; };
 		366E11551CB390D600DEEFC5 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E11541CB390D600DEEFC5 /* BudgetViewController.swift */; };
-		366E11591CB397BC00DEEFC5 /* SampleBudgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E11581CB397BC00DEEFC5 /* SampleBudgets.swift */; };
 		3681090E1CB204BA00E3FAA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3681090D1CB204BA00E3FAA4 /* AppDelegate.swift */; };
 		368109151CB204BA00E3FAA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 368109141CB204BA00E3FAA4 /* Assets.xcassets */; };
 		368109181CB204BA00E3FAA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 368109161CB204BA00E3FAA4 /* LaunchScreen.storyboard */; };
@@ -95,14 +92,11 @@
 		144D5522E06147AF76228B96 /* Pods-SmudgetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmudgetUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmudgetUITests/Pods-SmudgetUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		360915A81CB4962D0011B312 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		360915AA1CB497A40011B312 /* BudgetItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetItemTableViewCell.swift; sourceTree = "<group>"; };
-		360915D21CB4F1720011B312 /* AddBudgetItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBudgetItemViewController.swift; sourceTree = "<group>"; };
 		366E11461CB3763000DEEFC5 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
-		366E11481CB37D6600DEEFC5 /* NewBudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBudgetViewController.swift; sourceTree = "<group>"; };
 		366E114E1CB382AF00DEEFC5 /* Budget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		366E11501CB3906000DEEFC5 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		366E11521CB390B100DEEFC5 /* ExistingBudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingBudgetViewController.swift; sourceTree = "<group>"; };
 		366E11541CB390D600DEEFC5 /* BudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
-		366E11581CB397BC00DEEFC5 /* SampleBudgets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleBudgets.swift; sourceTree = "<group>"; };
 		3681090A1CB204BA00E3FAA4 /* Smudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3681090D1CB204BA00E3FAA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		368109141CB204BA00E3FAA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				366E114E1CB382AF00DEEFC5 /* Budget.swift */,
-				366E11581CB397BC00DEEFC5 /* SampleBudgets.swift */,
 				FA69A7F11CE6CB3C00404A42 /* BudgetModelManager.swift */,
 			);
 			name = Model;
@@ -169,11 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				368109841CB22BE600E3FAA4 /* PieChartViewController.swift */,
-				366E11481CB37D6600DEEFC5 /* NewBudgetViewController.swift */,
 				366E11501CB3906000DEEFC5 /* MainMenuViewController.swift */,
 				366E11521CB390B100DEEFC5 /* ExistingBudgetViewController.swift */,
 				366E11541CB390D600DEEFC5 /* BudgetViewController.swift */,
-				360915D21CB4F1720011B312 /* AddBudgetItemViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -487,16 +478,13 @@
 			files = (
 				368109851CB22BE600E3FAA4 /* PieChartViewController.swift in Sources */,
 				366E11531CB390B100DEEFC5 /* ExistingBudgetViewController.swift in Sources */,
-				360915D31CB4F1720011B312 /* AddBudgetItemViewController.swift in Sources */,
 				366E11511CB3906000DEEFC5 /* MainMenuViewController.swift in Sources */,
 				366E11551CB390D600DEEFC5 /* BudgetViewController.swift in Sources */,
 				366E114F1CB382AF00DEEFC5 /* Budget.swift in Sources */,
 				366E11471CB3763000DEEFC5 /* BudgetTableViewCell.swift in Sources */,
-				366E11591CB397BC00DEEFC5 /* SampleBudgets.swift in Sources */,
 				360915AB1CB497A40011B312 /* BudgetItemTableViewCell.swift in Sources */,
 				FA69A7F21CE6CB3C00404A42 /* BudgetModelManager.swift in Sources */,
 				3681090E1CB204BA00E3FAA4 /* AppDelegate.swift in Sources */,
-				366E11491CB37D6600DEEFC5 /* NewBudgetViewController.swift in Sources */,
 				FA69A7AC1CE6AF1500404A42 /* Smudget.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
