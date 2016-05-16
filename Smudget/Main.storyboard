@@ -355,7 +355,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="h8n-j3-1Vl" kind="presentation" identifier="ShowIncomesItem" id="zfb-XG-D1m"/>
+                                    <action selector="addIncome_Clicked:" destination="lOG-5O-qGf" eventType="touchUpInside" id="cZO-xn-si6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="addExpense" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgU-WJ-TBx">
@@ -389,7 +389,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="h8n-j3-1Vl" kind="presentation" identifier="AddExpenseItem" id="7hz-OJ-ROW"/>
+                                    <action selector="addExpense_Clicked:" destination="lOG-5O-qGf" eventType="touchUpInside" id="FjS-Qm-WPq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92m-eS-zui">
@@ -667,8 +667,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addExpenseButton" destination="OgU-WJ-TBx" id="ZQn-g8-BiZ"/>
-                        <outlet property="addIncomeButton" destination="Ihb-zf-T5w" id="jQt-KE-7y3"/>
                         <outlet property="balanceLabel" destination="9dc-sm-pNt" id="mc2-VX-7zZ"/>
                         <outlet property="budgetTitleLabel" destination="jjL-CE-bvX" id="dGE-6z-ZOO"/>
                         <outlet property="expensesTableView" destination="CFT-m4-oUp" id="grt-Ze-FbU"/>
@@ -951,24 +949,6 @@
             <point key="canvasLocation" x="2736" y="1869"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="pCd-Y6-lij">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h8n-j3-1Vl" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Znl-2y-ZsX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="2mv-ef-dyI" kind="relationship" relationship="rootViewController" id="j5d-TD-D7p"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OQv-vf-d67" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2736" y="1127"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="v7t-vD-tt6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dZj-1k-Jyf" sceneMemberID="viewController">
@@ -993,6 +973,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cFV-2h-xqK"/>
-        <segue reference="zfb-XG-D1m"/>
     </inferredMetricsTieBreakers>
 </document>

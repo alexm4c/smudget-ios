@@ -6,6 +6,8 @@
 //  Copyright © 2016 Alex Mc Bain. All rights reserved.
 //
 
+
+
 import UIKit
 
 class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -26,6 +28,50 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var addExpenseButton: UIButton!
     @IBOutlet weak var addIncomeButton: UIButton!
 
+    // MARK: Actions
+    @IBAction func addIncome_Clicked(sender: UIButton) {
+        promptForNewBudgetItem("income", addItem: {
+            (item: Budget.BudgetItem) in
+            self.budget.incomes.append(item)
+            self.update()
+        })
+    }
+    @IBAction func addExpense_Clicked(sender: UIButton) {
+        promptForNewBudgetItem("expense", addItem: {
+            (item: Budget.BudgetItem) in
+            self.budget.incomes.append(item)
+            self.update()
+        })
+    }
+    
+    func promptForNewBudgetItem(budgetItemName:String, addItem: (item: Budget.BudgetItem) -> Void) {
+        let alertTitle = "New " + budgetItemName
+        let alertMessage = "Enter " + budgetItemName + " details"
+        
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Go", style: .Default, handler: {
+            (action: UIAlertAction!) in
+            let newItemName:String = alert.textFields![0].text ?? ""
+            let newItemValue:Double = Double(alert.textFields![1].text!) ?? 0
+            let newBudgetItem = Budget.BudgetItem(name: newItemName, value: newItemValue)
+            addItem(item: newBudgetItem)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: {
+            (action: UIAlertAction) -> Void in
+        }))
+        alert.addTextFieldWithConfigurationHandler({
+            (textField: UITextField!) in
+            textField.placeholder = "Enter Name"
+        })
+        alert.addTextFieldWithConfigurationHandler({
+            (textField: UITextField!) in
+            textField.placeholder = "Enter Value ($$)"
+        })
+        self.presentViewController(alert, animated: true, completion: nil)
+        self.view.endEditing(true)
+    
+    }
+    
     // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,42 +172,8 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         updateTotals()
     }
     
-    
     // MARK: Navigation
-    // Action receives data from the AddNewBudgetItemController and adds the new item to the array and table
-    @IBAction func unwindToBudget(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.sourceViewController as? AddBudgetItemViewController, budgetItem = sourceViewController.budgetItem, tableName = sourceViewController.tableName {
-            
-            if tableName == "expense" {
-                let newIndexPath = NSIndexPath(forRow: budget.expenses.count, inSection: 0)
-                budget.expenses.append(budgetItem)
-                expensesTableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
-            }
-            
-            if tableName == "income" {
-                let newIndexPath = NSIndexPath(forRow: budget.incomes.count, inSection: 0)
-                budget.incomes.append(budgetItem)
-                incomesTableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
-            }
-        }
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        // Segue to AddNewBudgetItemController for adding new items
-        if let navVC = segue.destinationViewController as? UINavigationController {
-            
-            if let destVC = navVC.viewControllers.first as? AddBudgetItemViewController {
-                
-                if addExpenseButton === sender {
-                    destVC.tableName = "expense"
-                }
-                if addIncomeButton === sender {
-                    destVC.tableName = "income"
-                }
-            }
-        }
-        
         // Segue to Pie Chart
         if let destVC = segue.destinationViewController as? PieChartViewController {
             destVC.budget = budget
