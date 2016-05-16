@@ -11,7 +11,7 @@ import UIKit
 class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Properties
-    var budget:Budget = Budget(title: "Default Title")
+    var budget:Budget = Budget()
     var balance:Double = 0
     
     // MARK: Outlets
@@ -64,7 +64,7 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let income = budget.incomes[indexPath.row]
         
             cell.budgetItemName.text = income.name
-            cell.budgetItemAmount.text = "$" + String(income.amount)
+            cell.budgetItemAmount.text = "$" + String(income.value)
         
             return cell
         } else {
@@ -74,7 +74,7 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let expense = budget.expenses[indexPath.row]
             
             cell.budgetItemName.text = expense.name
-            cell.budgetItemAmount.text = "$" + String(expense.amount)
+            cell.budgetItemAmount.text = "$" + String(expense.value)
             
             return cell
         }
@@ -101,11 +101,11 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var expensesTotal:Double = 0
         
         for income in (budget.incomes) {
-            incomesTotal += income.amount
+            incomesTotal += income.value
         }
         
         for expense in (budget.expenses) {
-            expensesTotal += expense.amount
+            expensesTotal += expense.value
         }
         
         balance = incomesTotal - expensesTotal

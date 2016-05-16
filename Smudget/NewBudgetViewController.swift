@@ -36,11 +36,12 @@ class NewBudgetViewController: UIViewController, UITextFieldDelegate {
             if let destVC = navVC.viewControllers.first as? BudgetViewController {
                 
                 if segue.identifier == "newToBudgetSegue" {
-                    let newBudget = Budget(title: budgetTitleTextField.text!)
-                    sampleBudgets.budgets.append(newBudget)
+                    let newBudget = Budget()
+                    newBudget.title = budgetTitleTextField.text!
+                    BudgetModelManager.sharedInstance.budgets.append(newBudget)
                     // We just appended the new budget to the last index
                     // So we can just pass that to the budget view
-                    destVC.budget = sampleBudgets.budgets.last!
+                    destVC.budget = BudgetModelManager.sharedInstance.budgets.last!
                 }
             }
         }

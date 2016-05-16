@@ -12,7 +12,7 @@ class AddBudgetItemViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Properties
     
-    var budgetItem: (name: String, amount: Double)?
+    var budgetItem: Budget.BudgetItem?
     var tableName:String? = "nothing"
     
     @IBOutlet weak var addToTableLabel: UILabel!
@@ -56,10 +56,11 @@ class AddBudgetItemViewController: UIViewController, UITextFieldDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if doneButton === sender {
-            let name = nameTextField.text ?? ""
-            let amount = Double(amountTextField.text!) ?? 0
             
-            budgetItem = (name, amount)
+            let name = nameTextField.text ?? ""
+            let value = Double(amountTextField.text!) ?? 0
+            let newBudgetItem = Budget.BudgetItem(name: name, value: value)
+            budgetItem = newBudgetItem
         }
     }
     

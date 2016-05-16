@@ -6,19 +6,24 @@
 //  Copyright © 2016 Alex Mc Bain. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class Budget {
     
+    struct BudgetItem {
+        var name:String
+        var value:Double
+    }
+    
     // MARK: Properties
     var title:String
-    var incomes:[(name:String, amount:Double)]
-    var expenses:[(name:String, amount:Double)]
+    var incomes:[BudgetItem]
+    var expenses:[BudgetItem]
 
     // MARK: Initialization
-    init(title: String) {
-        self.title = title
-        self.incomes = [(name:String, amount:Double)]()
-        self.expenses = [(name:String, amount:Double)]()
+    init() {
+        self.title = "New Budget Title"
+        self.incomes = [BudgetItem]()
+        self.expenses = [BudgetItem]()
     }
 }

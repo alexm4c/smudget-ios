@@ -12,7 +12,7 @@ import Charts
 class PieChartViewController: UIViewController {
     
     // MARK: Properties
-    var budget:Budget = Budget(title:"Default Budget")
+    var budget:Budget = Budget()
 
     // Calculation for balance has already been made in the 
     // budget view controller so why not just pass it in
@@ -37,13 +37,13 @@ class PieChartViewController: UIViewController {
         // Income data
         for income in budget.incomes {
             dataNames.append(income.name)
-            dataValues.append(income.amount)
+            dataValues.append(income.value)
         }
         
         // Expense data
         for expense in budget.expenses {
             dataNames.append(expense.name)
-            dataValues.append(expense.amount)
+            dataValues.append(expense.value)
         }
         
         // Balance

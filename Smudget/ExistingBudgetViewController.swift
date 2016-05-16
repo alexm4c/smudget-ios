@@ -11,8 +11,7 @@ import UIKit
 class ExistingBudgetViewController: UITableViewController {
     
     // MARK: Properties
-    let budgets:[Budget] = sampleBudgets.budgets
-    
+    let budgets = BudgetModelManager.sharedInstance.budgets
     
     // MARK: View Controller
     override func viewDidLoad() {
