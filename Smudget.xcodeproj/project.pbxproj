@@ -23,6 +23,7 @@
 		3687198D1CB768FB00D4780D /* SmudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3687198C1CB768FB00D4780D /* SmudgetUITests.swift */; };
 		64E16620B9FC5C41330CC421 /* Pods_Smudget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAED4F5E215685FB5F0A25D7 /* Pods_Smudget.framework */; };
 		C42E50368DD568A44C37D1F2 /* Pods_SmudgetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 104D95B298AED498835AD8C1 /* Pods_SmudgetUITests.framework */; };
+		FA5179631CE9DA5100439A60 /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5179621CE9DA5000439A60 /* CurrencyConverter.swift */; };
 		FA69A7A51CE6AE8C00404A42 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA69A7A41CE6AE8C00404A42 /* CoreData.framework */; };
 		FA69A7AC1CE6AF1500404A42 /* Smudget.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA69A7AA1CE6AF1500404A42 /* Smudget.xcdatamodeld */; };
 		FA69A7F21CE6CB3C00404A42 /* BudgetModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69A7F11CE6CB3C00404A42 /* BudgetModelManager.swift */; };
@@ -111,6 +112,7 @@
 		60E793237537A31E31BA9831 /* Pods-Smudget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smudget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smudget/Pods-Smudget.debug.xcconfig"; sourceTree = "<group>"; };
 		768A688EB41E60FA0D110C47 /* Pods-SmudgetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmudgetUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmudgetUITests/Pods-SmudgetUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CAED4F5E215685FB5F0A25D7 /* Pods_Smudget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smudget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA5179621CE9DA5000439A60 /* CurrencyConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
 		FA69A7A41CE6AE8C00404A42 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FA69A7AB1CE6AF1500404A42 /* Smudget.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Smudget.xcdatamodel; sourceTree = "<group>"; };
 		FA69A7F11CE6CB3C00404A42 /* BudgetModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetModelManager.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				366E114E1CB382AF00DEEFC5 /* Budget.swift */,
 				FA69A7F11CE6CB3C00404A42 /* BudgetModelManager.swift */,
+				FA5179621CE9DA5000439A60 /* CurrencyConverter.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				366E114F1CB382AF00DEEFC5 /* Budget.swift in Sources */,
 				366E11471CB3763000DEEFC5 /* BudgetTableViewCell.swift in Sources */,
 				360915AB1CB497A40011B312 /* BudgetItemTableViewCell.swift in Sources */,
+				FA5179631CE9DA5100439A60 /* CurrencyConverter.swift in Sources */,
 				FA69A7F21CE6CB3C00404A42 /* BudgetModelManager.swift in Sources */,
 				3681090E1CB204BA00E3FAA4 /* AppDelegate.swift in Sources */,
 				FA69A7AC1CE6AF1500404A42 /* Smudget.xcdatamodeld in Sources */,
