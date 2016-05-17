@@ -45,6 +45,7 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func promptForNewBudgetItem(budgetItemName:String, addItem: (item: Budget.BudgetItem) -> Void) {
+        
         let alertTitle = "New " + budgetItemName
         let alertMessage = "Enter " + budgetItemName + " details"
         
@@ -93,6 +94,7 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         if tableView == incomesTableView {
             return budget.incomes.count
         } else if tableView == expensesTableView {
@@ -100,9 +102,11 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             return 0
         }
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         if tableView == incomesTableView {
             let cellIdentifier = "BudgetIncomesTableViewCell"
             let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! BudgetItemTableViewCell
@@ -128,6 +132,7 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
         if editingStyle == UITableViewCellEditingStyle.Delete {
             if tableView == incomesTableView {
                 budget.incomes.removeAtIndex(indexPath.row)
@@ -139,10 +144,12 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             update()
         }
+        
     }
     
     // MARK: Updating View
     func updateTotals() {
+        
         var incomesTotal:Double = 0
         var expensesTotal:Double = 0
         
@@ -163,22 +170,28 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func updateTableViews() {
+        
         incomesTableView.reloadData()
         expensesTableView.reloadData()
+    
     }
     
     func update() {
+        
         updateTableViews()
         updateTotals()
+    
     }
     
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         // Segue to Pie Chart
         if let destVC = segue.destinationViewController as? PieChartViewController {
             destVC.budget = budget
             destVC.balance = balance
         }
+        
     }
     
 }

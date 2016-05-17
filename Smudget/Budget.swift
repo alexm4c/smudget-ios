@@ -26,4 +26,19 @@ class Budget {
         self.incomes = [BudgetItem]()
         self.expenses = [BudgetItem]()
     }
+    
+    func calculateBalance() -> Double {
+        
+        var balance:Double = 0
+        
+        for income in incomes {
+            balance += income.value
+        }
+        
+        for expense in expenses {
+            balance -= expense.value
+        }
+        
+        return balance
+    }
 }
