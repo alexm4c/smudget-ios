@@ -12,6 +12,9 @@ import SwiftyJSON
 
 class CurrencyModel {
 
+    private static let API_URL = "https://api.fixer.io/latest"
+    
+    // These are the currencies that the API supports
     enum Currency:String {
         case AUD
         case CAD
@@ -20,6 +23,7 @@ class CurrencyModel {
         case CZK
         case DKK
         case EEK
+        case EUR
         case GBP
         case HKD
         case HUF
@@ -42,14 +46,9 @@ class CurrencyModel {
         case ZAR
     }
     
-    
-    
-
-    var base:Currency = .AUD
-    
-    
-    func getRate(base:Currency, forCurrency:Currency) -> (Double) {
-        let url = "https://api.fixer.io/latest?" + "base=" + base.rawValue + "&symbols=" + forCurrency.rawValue
+    func getRateFromAPI(base:Currency, forCurrency:Currency, onResponse: (Double?) -> Void) {
+        
+        let url = CurrencyModel.API_URL + "?base=" + base.rawValue + "&symbols=" + forCurrency.rawValue
         
         Alamofire.request(.GET, url).responseJSON {
             response in
@@ -60,12 +59,12 @@ class CurrencyModel {
                 return
             }
             
-            print(responseJSON)
+            let rateData = JSON(responseJSON)
             
+            let rate = rateData["rates"][forCurrency.rawValue].stringValue
+            
+            onResponse(Double(rate))
         }
-        
-        
-        return 0
     }
     
 }
