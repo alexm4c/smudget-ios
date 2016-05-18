@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BudgetInfoToday.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Smudget.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>368719811CB7677300D4780D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA5C3C601CEAFCD100BA80F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
