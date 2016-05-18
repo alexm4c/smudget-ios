@@ -10,8 +10,8 @@ import UIKit
 
 class ExistingBudgetViewController: UITableViewController {
     
-    // MARK: Properties
-    let budgets = BudgetModelManager.sharedInstance.budgets
+//    // MARK: Properties
+//    var budgets = BudgetModelManager.sharedInstance.budgets
     
     // MARK: View Controller
     override func viewDidLoad() {
@@ -28,18 +28,28 @@ class ExistingBudgetViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return budgets.count
+        return BudgetModelManager.sharedInstance.budgets.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "BudgetTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! BudgetTableViewCell
         
-        let budget = budgets[indexPath.row]
+        let budget = BudgetModelManager.sharedInstance.budgets[indexPath.row]
         
         cell.budgetTitleLabel.text = budget.title
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            BudgetModelManager.sharedInstance.budgets.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            tableView.reloadData()
+        }
+        
     }
     
     // MARK: Navigation
@@ -51,7 +61,7 @@ class ExistingBudgetViewController: UITableViewController {
             
                 if segue.identifier == "existingToBudgetSegue" {
                     if let budgetIndex = tableView.indexPathForSelectedRow?.row {
-                        destVC.budget = budgets[budgetIndex]
+                        destVC.budget = BudgetModelManager.sharedInstance.budgets[budgetIndex]
                     }
                 }
             }

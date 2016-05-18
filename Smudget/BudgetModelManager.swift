@@ -29,11 +29,13 @@ class BudgetModelManager {
                 let budget = Budget()
                 budget.title = budgetObject.title ?? ""
                 
-                for budgetItemObject in budgetObject.budgetItem! {
+                for object in budgetObject.budgetItem! {
+                    
+                    let budgetItemObject = object as! MOMBudgetItem
                     
                     let budgetItemName:String = budgetItemObject.name! ?? ""
                     let budgetItemValue:Double = Double(budgetItemObject.value!) ?? 0
-                    let budgetItemType = budgetItemObject.type!
+                    let budgetItemType = budgetItemObject.type
                     
                     let budgetItem = Budget.BudgetItem(name: budgetItemName, value: budgetItemValue)
                     
@@ -42,7 +44,8 @@ class BudgetModelManager {
                     } else if budgetItemType == "income" {
                         budget.incomes.append(budgetItem)
                     } else {
-                        // Something went wrong, do nothing
+                        // budget item had no type, for some reason.
+                        // discard it
                     }
                 }
                 budgets.append(budget)
@@ -64,7 +67,7 @@ class BudgetModelManager {
             let budgetObject = NSEntityDescription.insertNewObjectForEntityForName("Budget", inManagedObjectContext: context) as! MOMBudget
             
             budgetObject.title = budget.title
-//            budgetObject.budgetItem = NSSet<MOMBudgetItem>()
+            budgetObject.budgetItem = Set<MOMBudgetItem>()
             
             for expense in budget.expenses {
                 
@@ -75,7 +78,7 @@ class BudgetModelManager {
                 expenseObject.type = "expense"
                 expenseObject.budget = budgetObject
                 
-                budgetObject.budgetItem?.insert(expenseObject)
+                budgetObject.addBudgetItemObject(expenseObject)
             }
             
             for income in budget.incomes {
@@ -87,7 +90,7 @@ class BudgetModelManager {
                 incomeObject.type = "income"
                 incomeObject.budget = budgetObject
                 
-                budgetObject.budgetItem.insert(incomeObject)
+               budgetObject.addBudgetItemObject(incomeObject)
 
             }
         }

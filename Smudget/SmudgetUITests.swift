@@ -30,86 +30,61 @@ class SmudgetUITest: XCTestCase {
     
     func test1() {
         
+        
         let app = XCUIApplication()
         app.buttons["New Budget"].tap()
         
-        let enterBudgetTitleTextField = app.textFields["Enter Budget Title"]
-        enterBudgetTitleTextField.tap()
+        let collectionViewsQuery = app.alerts["New Budget"].collectionViews
+        collectionViewsQuery.textFields["Enter Title Here"].typeText("Test Budget")
+        collectionViewsQuery.buttons["Go"].tap()
         
-        let shiftButton = app.buttons["shift"]
-        shiftButton.tap()
-        enterBudgetTitleTextField.typeText("Test ")
-        shiftButton.tap()
-        enterBudgetTitleTextField.typeText("Budget")
+        let element = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
+        let addFilledButton = element.childrenMatchingType(.Button).matchingIdentifier("Add Filled").elementBoundByIndex(0)
+        addFilledButton.tap()
         
-        let returnButton = app.buttons["Return"]
-        returnButton.tap()
-        enterBudgetTitleTextField.typeText("\n")
-        app.buttons["Create!"].tap()
-        
-        let window = app.childrenMatchingType(.Window).elementBoundByIndex(0)
-        let element = window.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
-        element.childrenMatchingType(.Button).matchingIdentifier("Add Filled").elementBoundByIndex(0).tap()
-        
-        let enterNameTextField = app.textFields["Enter Name"]
+        let collectionViewsQuery3 = app.alerts["New income"].collectionViews
+        let enterNameTextField = collectionViewsQuery3.textFields["Enter Name"]
         enterNameTextField.tap()
-        shiftButton.tap()
-        enterNameTextField.typeText("Test Income")
-        returnButton.tap()
+        enterNameTextField.typeText("Work")
         
-        let textField = app.textFields["0"]
-        textField.tap()
-        textField.typeText("200")
+        let enterValueTextField = collectionViewsQuery3.textFields["Enter Value ($$)"]
+        enterValueTextField.tap()
+        enterValueTextField.typeText("250")
         
-        let doneButton = app.navigationBars["Add Budget Item"].buttons["Done"]
-        doneButton.tap()
+        let goButton = collectionViewsQuery3.buttons["Go"]
+        goButton.tap()
+        addFilledButton.tap()
+        enterNameTextField.typeText("App")
+        enterValueTextField.tap()
+        enterValueTextField.typeText("50")
+        goButton.tap()
         element.childrenMatchingType(.Button).matchingIdentifier("Add Filled").elementBoundByIndex(1).tap()
-        enterNameTextField.tap()
-        shiftButton.tap()
-        enterNameTextField.typeText("Test Expense")
-        returnButton.tap()
-        textField.tap()
-        textField.typeText("200")
-        window.childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.Other).element.tap()
-        doneButton.tap()
+        
+        let collectionViewsQuery2 = app.alerts["New expense"].collectionViews
+        collectionViewsQuery2.textFields["Enter Name"].typeText("Coffee")
+        
+        let enterValueTextField2 = collectionViewsQuery2.textFields["Enter Value ($$)"]
+        enterValueTextField2.tap()
+        enterValueTextField2.typeText("60")
+        
+        let goButton2 = collectionViewsQuery2.buttons["Go"]
+        goButton2.tap()
+        collectionViewsQuery2.buttons["Cancel"].tap()
+        app.otherElements.containingType(.Alert, identifier:"New expense").element.tap()
+        goButton2.tap()
         app.navigationBars["Smudget.BudgetView"].buttons["Main Menu"].tap()
         
     }
     
     func test2() {
         
-        let app = XCUIApplication()
-        app.buttons["Existing Budget"].tap()
-        
-        let myFirstBudgetStaticText = app.tables.staticTexts["My First Budget"]
-        myFirstBudgetStaticText.tap()
 
-        app.buttons["Time Filled"].tap()
-        
-        let element = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
-        element.tap()
-        element.tap()
-        element.tap()
-        app.navigationBars["Pie Chart"].childrenMatchingType(.Button).matchingIdentifier("Back").elementBoundByIndex(0).tap()
-        app.navigationBars["Smudget.BudgetView"].buttons["Main Menu"].tap()
         
     }
     
     func test3() {
         
-        let app = XCUIApplication()
-        app.buttons["New Budget"].tap()
-        
-        let enterBudgetTitleTextField = app.textFields["Enter Budget Title"]
-        enterBudgetTitleTextField.tap()
-        enterBudgetTitleTextField.typeText("Test Budget")
-        app.buttons["Create!"].tap()
-        
-        let mainMenuButton = app.navigationBars["Smudget.BudgetView"].buttons["Main Menu"]
-        mainMenuButton.tap()
-        app.buttons["Existing Budget"].tap()
-        app.tables.staticTexts["Test Budget"].tap()
-        mainMenuButton.tap()
+
         
     }
     

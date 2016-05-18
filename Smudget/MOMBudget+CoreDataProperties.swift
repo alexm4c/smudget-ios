@@ -17,7 +17,7 @@ extension MOMBudget {
     @NSManaged var title: String?
     @NSManaged var budgetItem: NSSet?
     
-    // This is what I manually added
+    
     @NSManaged func addBudgetItemObject(value:MOMBudgetItem)
     @NSManaged func removeBudgetItemObject(value:MOMBudgetItem)
     @NSManaged func addBudgets(value:Set<MOMBudgetItem>)

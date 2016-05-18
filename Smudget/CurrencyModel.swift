@@ -41,10 +41,31 @@ class CurrencyModel {
         case USD
         case ZAR
     }
+    
+    
+    
 
     var base:Currency = .AUD
     
     
-    
+    func getRate(base:Currency, forCurrency:Currency) -> (Double) {
+        let url = "https://api.fixer.io/latest?" + "base=" + base.rawValue + "&symbols=" + forCurrency.rawValue
+        
+        Alamofire.request(.GET, url).responseJSON {
+            response in
+            guard response.result.isSuccess else {
+                return
+            }
+            guard let responseJSON = response.result.value as? [String:AnyObject] else {
+                return
+            }
+            
+            print(responseJSON)
+            
+        }
+        
+        
+        return 0
+    }
     
 }
