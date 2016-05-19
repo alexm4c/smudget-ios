@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         BudgetModelManager.sharedInstance.fetchBudgets()
-        print("load")
         return true
     }
 
@@ -32,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
         BudgetModelManager.sharedInstance.saveBudgets()
-        print("saved")
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -47,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         BudgetModelManager.sharedInstance.saveBudgets()
-        print("saved")
         self.saveContext()
     }
     

@@ -19,12 +19,14 @@ class Budget {
     var title:String
     var incomes:[BudgetItem]
     var expenses:[BudgetItem]
+    var currency:String
 
     // MARK: Initialization
     init() {
         self.title = "New Budget Title"
         self.incomes = [BudgetItem]()
         self.expenses = [BudgetItem]()
+        self.currency = "AUD"
     }
     
     func calculateBalance() -> Double {

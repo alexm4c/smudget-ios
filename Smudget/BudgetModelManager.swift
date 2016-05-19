@@ -28,6 +28,8 @@ class BudgetModelManager {
                 
                 let budget = Budget()
                 budget.title = budgetObject.title ?? ""
+                // Default to AUD cause it's the easy way out
+                budget.currency = budgetObject.currency ?? "AUD"
                 
                 for object in budgetObject.budgetItem! {
                     
@@ -67,6 +69,7 @@ class BudgetModelManager {
             let budgetObject = NSEntityDescription.insertNewObjectForEntityForName("Budget", inManagedObjectContext: context) as! MOMBudget
             
             budgetObject.title = budget.title
+            budgetObject.currency = budget.currency
             budgetObject.budgetItem = Set<MOMBudgetItem>()
             
             for expense in budget.expenses {

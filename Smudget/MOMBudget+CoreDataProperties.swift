@@ -15,6 +15,7 @@ import CoreData
 extension MOMBudget {
 
     @NSManaged var title: String?
+    @NSManaged var currency: String?
     @NSManaged var budgetItem: NSSet?
     
     
