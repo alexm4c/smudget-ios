@@ -54,6 +54,13 @@ class MainMenuViewController: UIViewController {
     // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CurrencyModel().getCurrencyListFromAPI( {
+            currencies in
+            
+            print(currencies)
+        
+        })
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

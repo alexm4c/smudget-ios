@@ -2,18 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Smudget/MOMBudgetItem+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Smudget/MOMBudgetItem.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Smudget/MOMBudget+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Smudget/MOMBudget.swift">
-   </FileRef>
-   <FileRef
       location = "group:Smudget.xcodeproj">
    </FileRef>
    <FileRef

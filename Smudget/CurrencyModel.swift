@@ -14,41 +14,20 @@ class CurrencyModel {
 
     private static let API_URL = "https://api.fixer.io/latest"
     
-    // These are the currencies that the API supports
-    enum Currency:String {
-        case AUD
-        case CAD
-        case CHF
-        case CYP
-        case CZK
-        case DKK
-        case EEK
-        case EUR
-        case GBP
-        case HKD
-        case HUF
-        case ISK
-        case JPY
-        case KRW
-        case LTL
-        case LVL
-        case MTL
-        case NOK
-        case NZD
-        case PLN
-        case ROL
-        case SEK
-        case SGD
-        case SIT
-        case SKK
-        case TRL
-        case USD
-        case ZAR
+    var currencyList = [String]()
+    
+    init() {
+        
+        getCurrencyListFromAPI ({
+            newCurrencyList in
+            self.currencyList = newCurrencyList
+        })
+    
     }
     
-    func getRateFromAPI(base:Currency, forCurrency:Currency, onResponse: (Double?) -> Void) {
-        
-        let url = CurrencyModel.API_URL + "?base=" + base.rawValue + "&symbols=" + forCurrency.rawValue
+    func getCurrencyListFromAPI(onResponse: ([String]) -> Void) {
+    
+        let url = CurrencyModel.API_URL + "?base=AUD"
         
         Alamofire.request(.GET, url).responseJSON {
             response in
@@ -59,9 +38,38 @@ class CurrencyModel {
                 return
             }
             
-            let rateData = JSON(responseJSON)
+            var newCurrencyList = [String]()
             
-            let rate = rateData["rates"][forCurrency.rawValue].stringValue
+            let json = JSON(responseJSON)
+            let rates = json["rates"]
+            
+            // AUD will not be returned by the API because it is the base
+            newCurrencyList.append("AUD")
+            
+            for (key, _) in rates {
+                newCurrencyList.append(key)
+            }
+            
+            onResponse(newCurrencyList)
+        }
+    
+    }
+    
+    func getRateFromAPI(base:String, forCurrency:String, onResponse: (Double?) -> Void) {
+        
+        let url = CurrencyModel.API_URL + "?base=" + base + "&symbols=" + forCurrency
+        
+        Alamofire.request(.GET, url).responseJSON {
+            response in
+            guard response.result.isSuccess else {
+                return
+            }
+            guard let responseJSON = response.result.value as? [String:AnyObject] else {
+                return
+            }
+            
+            let json = JSON(responseJSON)
+            let rate = json["rates"][forCurrency].stringValue
             
             onResponse(Double(rate))
         }
