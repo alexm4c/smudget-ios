@@ -32,18 +32,22 @@ class Budget {
         self.id = 0
     }
     
-    func calculateBalance() -> Double {
-        
-        var balance:Double = 0
-        
+    // Convenience functions for calculating totals
+    func incomeTotal() -> Double {
+        var total:Double = 0
         for income in incomes {
-            balance += income.value
+            total += income.value
         }
-        
+        return total
+    }
+    func expenseTotal() -> Double {
+        var total:Double = 0
         for expense in expenses {
-            balance -= expense.value
+            total += expense.value
         }
-        
-        return balance
+        return total
+    }
+    func balanceTotal() -> Double {
+        return incomeTotal() + expenseTotal()
     }
 }

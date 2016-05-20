@@ -24,7 +24,6 @@ class PieChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // Interface stuff
         pieChartView.descriptionText = "Incomes are red and, expenses are blue, I made a pie chart, just for you"
         
@@ -102,11 +101,5 @@ class PieChartViewController: UIViewController {
         pieChartDataSet.colors = colours
         
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
 }

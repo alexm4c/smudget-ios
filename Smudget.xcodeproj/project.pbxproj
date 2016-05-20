@@ -931,6 +931,7 @@
 				36365F861CEEB5F00099DC96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		368109051CB204BA00E3FAA4 /* Build configuration list for PBXProject "Smudget" */ = {
 			isa = XCConfigurationList;

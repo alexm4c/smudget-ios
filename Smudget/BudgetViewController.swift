@@ -30,31 +30,26 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var addExpenseButton: UIButton!
     @IBOutlet weak var addIncomeButton: UIButton!
 
-
     @IBOutlet weak var currencySelector: UITextField!
     
     // MARK: Actions
     @IBAction func addIncome_Clicked(sender: UIButton) {
-        
         promptForNewBudgetItem("income", addItem: {
             (item: Budget.BudgetItem) in
             self.budget.incomes.append(item)
             self.update()
         })
-        
     }
     @IBAction func addExpense_Clicked(sender: UIButton) {
-        
         promptForNewBudgetItem("expense", addItem: {
             (item: Budget.BudgetItem) in
             self.budget.expenses.append(item)
             self.update()
         })
-        
     }
     
+    // Function called when the add buttons are pressed, displays an alertview for inputing new item details
     func promptForNewBudgetItem(budgetItemName:String, addItem: (item: Budget.BudgetItem) -> Void) {
-        
         let alertTitle = "New " + budgetItemName
         let alertMessage = "Enter " + budgetItemName + " details"
         
@@ -79,7 +74,6 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         })
         self.presentViewController(alert, animated: true, completion: nil)
         self.view.endEditing(true)
-    
     }
     
     // MARK: View Controller
@@ -118,12 +112,6 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         update()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
     // MARK: Picker
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -139,8 +127,6 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let newCurrencyBase = currencyModel.currencyList[row]
-        print("changing currencybase from " + currencyBase + " to " + newCurrencyBase)
-        
         currencyModel.getRateFromAPI(currencyBase, forCurrency: newCurrencyBase, onResponse: changeBudgetCurrencyBase)
         currencyBase = currencyModel.currencyList[row]
         currencySelector.text = newCurrencyBase
@@ -148,11 +134,7 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func changeBudgetCurrencyBase(rate:Double?) {
-        
-        print("rate is " + String(rate!))
-        
         if rate != nil {
-        
             for i in 0..<budget.expenses.count {
                 budget.expenses[i].value *= rate!
             }
@@ -161,13 +143,11 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             update()
         }
-    
     }
     
     func donePicker() {
         currencySelector.resignFirstResponder()
     }
-    
     
     // MARK: Table View Delegation
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -175,7 +155,6 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if tableView == incomesTableView {
             return budget.incomes.count
         } else if tableView == expensesTableView {
@@ -183,11 +162,9 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             return 0
         }
-        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         if tableView == incomesTableView {
             let cellIdentifier = "BudgetIncomesTableViewCell"
             let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! BudgetItemTableViewCell
@@ -209,11 +186,9 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             return cell
         }
-        
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
         if editingStyle == UITableViewCellEditingStyle.Delete {
             if tableView == incomesTableView {
                 budget.incomes.removeAtIndex(indexPath.row)
@@ -225,10 +200,9 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             update()
         }
-        
     }
     
-    // MARK: Updating View for after it gets changed
+    // MARK: Updating View
     func update() {
         
         // update TableViews
@@ -236,26 +210,14 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         expensesTableView.reloadData()
         
         // update Totals
-        var incomesTotal:Double = 0
-        var expensesTotal:Double = 0
-        
-        for income in budget.incomes {
-            incomesTotal += income.value
-        }
-        
-        for expense in budget.expenses {
-            expensesTotal += expense.value
-        }
-        
-        balance = incomesTotal - expensesTotal
-        
-        incomesTotalLabel.text = String(format: "%.2f", incomesTotal)
-        expensesTotalLabel.text = String(format: "%.2f", expensesTotal)
+        balance = budget.balanceTotal()
+        incomesTotalLabel.text = String(format: "%.2f", budget.incomeTotal())
+        expensesTotalLabel.text = String(format: "%.2f", budget.expenseTotal())
         balanceLabel.text = String(format: "%.2f", balance)
         
         // Each time something is changed and the budget
         // view needs to be updated also save data
-        //BudgetModelManager.sharedInstance.saveBudgets()
+        BudgetModelManager.sharedInstance.saveBudgets()
     
     }
     
