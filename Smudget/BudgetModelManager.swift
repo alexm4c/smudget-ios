@@ -72,8 +72,6 @@ class BudgetModelManager {
             budget.currency = budgetObject.currency ?? "AUD"
             budget.id = Int(budgetObject.id!)
             
-            print("loading budget with id " + String(budget.id))
-            
             for object in budgetObject.budgetItem! {
                 
                 let budgetItemObject = object as! MOMBudgetItem
@@ -98,7 +96,6 @@ class BudgetModelManager {
             // Grab the highest id so we can assign new, unique ones
             if budget.id > BudgetModelManager.lastID {
                 BudgetModelManager.lastID = budget.id
-                print("lastID is now " + String(BudgetModelManager.lastID))
             }
         }
     
