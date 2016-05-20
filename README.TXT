@@ -13,19 +13,27 @@ The app also allows the user to convert there budget into a different currency b
 Assessment help:
 
 a. Adaptive Layout
-- Should work on just about all geometries, but you never know.
+- Should work on just about all geometries, but you can never really say ALL.
 - A safe bet would be iPhone 6s P+L and iPad P+L.
 
 b. App Extension
 
 c. Data Persistence
-- Most of the code associated with data persistence is within BudgetModelManager
+- Code associated with data persistence is within BudgetModelManager
 - BudgetModelManager is used in BudgetViewController and AppDelegate
 
 d. Remote Data Access
-- Most of the code that does the API call stuff is in CurrencyModel
-- the CurrencyModel is used in BudgetVC
+- Code that does the API call stuff is in CurrencyModel
+- CurrencyModel is used in the BudgetVC
 
 e. iOS Framework
 - I’m using a framework called Charts for this feature.
 - Charts makes pretty graphs and I use it to graph the users budget.
+- The code associated is in the PieChartViewController
+
+f. Unit Tests
+
+g. Extra feature
+- Don't know... learnt loads of stuff not in the lectures, but no one BIG thing
+- OH, probably the picker view might count, used to select the base currency in BudgetVC
+- It's a bit of a hack job but it works

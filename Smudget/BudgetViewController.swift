@@ -92,7 +92,6 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         pickerView.delegate = self
         
         if let defaultRowIndex = currencyModel.currencyList.indexOf(budget.currency) {
-            print("picker selecting row " + String(defaultRowIndex))
             pickerView.selectRow(defaultRowIndex, inComponent: 0, animated: false)
         } else {
             pickerView.selectRow(0, inComponent: 0, animated: false)

@@ -9,10 +9,7 @@
 import UIKit
 
 class ExistingBudgetViewController: UITableViewController {
-    
-//    // MARK: Properties
-//    var budgets = BudgetModelManager.sharedInstance.budgets
-    
+        
     // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()

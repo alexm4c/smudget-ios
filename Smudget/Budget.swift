@@ -21,7 +21,6 @@ class Budget {
     var expenses:[BudgetItem]
     var currency:String
     
-    // Persistancy Attribute
     var id:Int
 
     // MARK: Initialization

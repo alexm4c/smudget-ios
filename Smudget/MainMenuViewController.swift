@@ -43,7 +43,6 @@ class MainMenuViewController: UIViewController {
                     let newBudget = Budget()
                     newBudget.title = newBudgetTitle!
                     newBudget.id = BudgetModelManager.nextID()
-                    print("creating new budget with id " + String(newBudget.id))
                     BudgetModelManager.sharedInstance.budgets.append(newBudget)
                     // We just appended the new budget to the last index
                     // So we can just pass that to the budget view
