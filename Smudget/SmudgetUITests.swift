@@ -30,7 +30,6 @@ class SmudgetUITest: XCTestCase {
     
     func test1() {
         
-        
         let app = XCUIApplication()
         app.buttons["New Budget"].tap()
         
@@ -75,17 +74,4 @@ class SmudgetUITest: XCTestCase {
         app.navigationBars["Smudget.BudgetView"].buttons["Main Menu"].tap()
         
     }
-    
-    func test2() {
-        
-
-        
-    }
-    
-    func test3() {
-        
-
-        
-    }
-    
 }

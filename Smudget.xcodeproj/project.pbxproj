@@ -10,6 +10,8 @@
 		360915A91CB4962D0011B312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360915A81CB4962D0011B312 /* Main.storyboard */; };
 		360915AB1CB497A40011B312 /* BudgetItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360915AA1CB497A40011B312 /* BudgetItemTableViewCell.swift */; };
 		36365F741CEEA0F20099DC96 /* MOMBudget+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36365F731CEEA0F20099DC96 /* MOMBudget+CoreDataProperties.swift */; };
+		36365F761CEEB4800099DC96 /* README.TXT in Resources */ = {isa = PBXBuildFile; fileRef = 36365F751CEEB4800099DC96 /* README.TXT */; };
+		36365F801CEEB5F00099DC96 /* SmudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36365F7F1CEEB5F00099DC96 /* SmudgetTests.swift */; };
 		366E11471CB3763000DEEFC5 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E11461CB3763000DEEFC5 /* BudgetTableViewCell.swift */; };
 		366E114F1CB382AF00DEEFC5 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E114E1CB382AF00DEEFC5 /* Budget.swift */; };
 		366E11511CB3906000DEEFC5 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E11501CB3906000DEEFC5 /* MainMenuViewController.swift */; };
@@ -38,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		36365F821CEEB5F00099DC96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 368109021CB204BA00E3FAA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 368109091CB204BA00E3FAA4;
+			remoteInfo = Smudget;
+		};
 		368109781CB2270600E3FAA4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 368109711CB2270600E3FAA4 /* Charts.xcodeproj */;
@@ -120,6 +129,10 @@
 		360915A81CB4962D0011B312 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		360915AA1CB497A40011B312 /* BudgetItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetItemTableViewCell.swift; sourceTree = "<group>"; };
 		36365F731CEEA0F20099DC96 /* MOMBudget+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MOMBudget+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		36365F751CEEB4800099DC96 /* README.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.TXT; sourceTree = "<group>"; };
+		36365F7D1CEEB5F00099DC96 /* SmudgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmudgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		36365F7F1CEEB5F00099DC96 /* SmudgetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmudgetTests.swift; sourceTree = "<group>"; };
+		36365F811CEEB5F00099DC96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		366E11461CB3763000DEEFC5 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
 		366E114E1CB382AF00DEEFC5 /* Budget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		366E11501CB3906000DEEFC5 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +168,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		36365F7A1CEEB5F00099DC96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		368109071CB204BA00E3FAA4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,6 +215,15 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		36365F7E1CEEB5F00099DC96 /* SmudgetTests */ = {
+			isa = PBXGroup;
+			children = (
+				36365F7F1CEEB5F00099DC96 /* SmudgetTests.swift */,
+				36365F811CEEB5F00099DC96 /* Info.plist */,
+			);
+			path = SmudgetTests;
+			sourceTree = "<group>";
+		};
 		366E114A1CB37E4600DEEFC5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,11 +252,13 @@
 		368109011CB204BA00E3FAA4 = {
 			isa = PBXGroup;
 			children = (
+				36365F751CEEB4800099DC96 /* README.TXT */,
 				FA69A7A41CE6AE8C00404A42 /* CoreData.framework */,
 				368109711CB2270600E3FAA4 /* Charts.xcodeproj */,
 				3681090C1CB204BA00E3FAA4 /* Smudget */,
 				368719831CB7677300D4780D /* SmudgetUITests */,
 				FA5C3C641CEAFCD100BA80F4 /* BudgetInfoToday */,
+				36365F7E1CEEB5F00099DC96 /* SmudgetTests */,
 				3681090B1CB204BA00E3FAA4 /* Products */,
 				5324A1D46967F244C144DD6A /* Pods */,
 				EB84CCA083312FD6FEB19230 /* Frameworks */,
@@ -240,6 +271,7 @@
 				3681090A1CB204BA00E3FAA4 /* Smudget.app */,
 				368719821CB7677300D4780D /* SmudgetUITests.xctest */,
 				FA5C3C611CEAFCD100BA80F4 /* BudgetInfoToday.appex */,
+				36365F7D1CEEB5F00099DC96 /* SmudgetTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -321,6 +353,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		36365F7C1CEEB5F00099DC96 /* SmudgetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36365F841CEEB5F00099DC96 /* Build configuration list for PBXNativeTarget "SmudgetTests" */;
+			buildPhases = (
+				36365F791CEEB5F00099DC96 /* Sources */,
+				36365F7A1CEEB5F00099DC96 /* Frameworks */,
+				36365F7B1CEEB5F00099DC96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36365F831CEEB5F00099DC96 /* PBXTargetDependency */,
+			);
+			name = SmudgetTests;
+			productName = SmudgetTests;
+			productReference = 36365F7D1CEEB5F00099DC96 /* SmudgetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		368109091CB204BA00E3FAA4 /* Smudget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3681091C1CB204BA00E3FAA4 /* Build configuration list for PBXNativeTarget "Smudget" */;
@@ -392,6 +442,10 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Alex Mc Bain";
 				TargetAttributes = {
+					36365F7C1CEEB5F00099DC96 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 368109091CB204BA00E3FAA4;
+					};
 					368109091CB204BA00E3FAA4 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 8LELQL34M8;
@@ -432,6 +486,7 @@
 				368109091CB204BA00E3FAA4 /* Smudget */,
 				368719811CB7677300D4780D /* SmudgetUITests */,
 				FA5C3C601CEAFCD100BA80F4 /* BudgetInfoToday */,
+				36365F7C1CEEB5F00099DC96 /* SmudgetTests */,
 			);
 		};
 /* End PBXProject section */
@@ -468,12 +523,20 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		36365F7B1CEEB5F00099DC96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		368109081CB204BA00E3FAA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				360915A91CB4962D0011B312 /* Main.storyboard in Resources */,
 				368109181CB204BA00E3FAA4 /* LaunchScreen.storyboard in Resources */,
+				36365F761CEEB4800099DC96 /* README.TXT in Resources */,
 				368109151CB204BA00E3FAA4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,6 +637,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		36365F791CEEB5F00099DC96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36365F801CEEB5F00099DC96 /* SmudgetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		368109061CB204BA00E3FAA4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -615,6 +686,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		36365F831CEEB5F00099DC96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 368109091CB204BA00E3FAA4 /* Smudget */;
+			targetProxy = 36365F821CEEB5F00099DC96 /* PBXContainerItemProxy */;
+		};
 		368109831CB2270C00E3FAA4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Charts-iOS";
@@ -652,6 +728,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		36365F851CEEB5F00099DC96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SmudgetTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alexmcbain.SmudgetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smudget.app/Smudget";
+			};
+			name = Debug;
+		};
+		36365F861CEEB5F00099DC96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SmudgetTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alexmcbain.SmudgetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smudget.app/Smudget";
+			};
+			name = Release;
+		};
 		3681091A1CB204BA00E3FAA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -824,6 +924,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		36365F841CEEB5F00099DC96 /* Build configuration list for PBXNativeTarget "SmudgetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36365F851CEEB5F00099DC96 /* Debug */,
+				36365F861CEEB5F00099DC96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		368109051CB204BA00E3FAA4 /* Build configuration list for PBXProject "Smudget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

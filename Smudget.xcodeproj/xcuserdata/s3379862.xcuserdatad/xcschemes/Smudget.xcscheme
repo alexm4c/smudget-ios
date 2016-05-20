@@ -38,6 +38,16 @@
                ReferencedContainer = "container:Smudget.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "36365F7C1CEEB5F00099DC96"
+               BuildableName = "SmudgetTests.xctest"
+               BlueprintName = "SmudgetTests"
+               ReferencedContainer = "container:Smudget.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
