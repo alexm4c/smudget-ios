@@ -24,7 +24,6 @@ class BudgetModelManager {
     }
     
     func fetchBudgetObjects(predicate: NSPredicate?) -> [MOMBudget] {
-        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = appDelegate.managedObjectContext
         let request = NSFetchRequest(entityName: "Budget")
@@ -46,7 +45,6 @@ class BudgetModelManager {
     }
     
     func loadBudgets() {
-    
         let budgetObjects = fetchBudgetObjects(nil)
     
         for budgetObject in budgetObjects {
@@ -91,7 +89,6 @@ class BudgetModelManager {
     
     
     func saveBudgets() {
-    
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = appDelegate.managedObjectContext
         

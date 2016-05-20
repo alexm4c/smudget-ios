@@ -17,16 +17,14 @@ class CurrencyModel {
     var currencyList = [String]()
     
     init() {
-        
         getCurrencyListFromAPI ({
             newCurrencyList in
             self.currencyList = newCurrencyList
         })
-    
     }
     
+    // Get the list of currencies that the API supports
     func getCurrencyListFromAPI(onResponse: ([String]) -> Void) {
-    
         let url = CurrencyModel.API_URL + "?base=AUD"
         
         Alamofire.request(.GET, url).responseJSON {
@@ -52,11 +50,10 @@ class CurrencyModel {
             
             onResponse(newCurrencyList)
         }
-    
     }
     
+    // Get the specific exchange rate between the base and forCurrency currencies.
     func getRateFromAPI(base:String, forCurrency:String, onResponse: (Double?) -> Void) {
-        
         let url = CurrencyModel.API_URL + "?base=" + base + "&symbols=" + forCurrency
         
         Alamofire.request(.GET, url).responseJSON {
