@@ -47,8 +47,10 @@ class PieChartViewController: UIViewController {
         }
         
         // Balance
-        dataNames.append("Balance")
-        dataValues.append(balance)
+        if balance > 0 {
+            dataNames.append("Balance")
+            dataValues.append(balance)
+        }
         
         setChart(dataNames, values: dataValues)
     }

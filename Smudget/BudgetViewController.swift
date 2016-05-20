@@ -240,11 +240,11 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var incomesTotal:Double = 0
         var expensesTotal:Double = 0
         
-        for income in (budget.incomes) {
+        for income in budget.incomes {
             incomesTotal += income.value
         }
         
-        for expense in (budget.expenses) {
+        for expense in budget.expenses {
             expensesTotal += expense.value
         }
         
@@ -253,6 +253,10 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         incomesTotalLabel.text = String(format: "%.2f", incomesTotal)
         expensesTotalLabel.text = String(format: "%.2f", expensesTotal)
         balanceLabel.text = String(format: "%.2f", balance)
+        
+        // Each time something is changed and the budget
+        // view needs to be updated also save data
+        //BudgetModelManager.sharedInstance.saveBudgets()
     
     }
     

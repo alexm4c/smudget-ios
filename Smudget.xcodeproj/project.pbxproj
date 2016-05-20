@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		360915A91CB4962D0011B312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360915A81CB4962D0011B312 /* Main.storyboard */; };
 		360915AB1CB497A40011B312 /* BudgetItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360915AA1CB497A40011B312 /* BudgetItemTableViewCell.swift */; };
+		36365F741CEEA0F20099DC96 /* MOMBudget+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36365F731CEEA0F20099DC96 /* MOMBudget+CoreDataProperties.swift */; };
 		366E11471CB3763000DEEFC5 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E11461CB3763000DEEFC5 /* BudgetTableViewCell.swift */; };
 		366E114F1CB382AF00DEEFC5 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E114E1CB382AF00DEEFC5 /* Budget.swift */; };
 		366E11511CB3906000DEEFC5 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E11501CB3906000DEEFC5 /* MainMenuViewController.swift */; };
@@ -16,7 +17,6 @@
 		366E11551CB390D600DEEFC5 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E11541CB390D600DEEFC5 /* BudgetViewController.swift */; };
 		367628FA1CEC0C04003C743D /* MOMBudgetItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367628F61CEC0C04003C743D /* MOMBudgetItem+CoreDataProperties.swift */; };
 		367628FB1CEC0C04003C743D /* MOMBudgetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367628F71CEC0C04003C743D /* MOMBudgetItem.swift */; };
-		367628FC1CEC0C04003C743D /* MOMBudget+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367628F81CEC0C04003C743D /* MOMBudget+CoreDataProperties.swift */; };
 		367628FD1CEC0C04003C743D /* MOMBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367628F91CEC0C04003C743D /* MOMBudget.swift */; };
 		3681090E1CB204BA00E3FAA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3681090D1CB204BA00E3FAA4 /* AppDelegate.swift */; };
 		368109151CB204BA00E3FAA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 368109141CB204BA00E3FAA4 /* Assets.xcassets */; };
@@ -119,6 +119,7 @@
 		144D5522E06147AF76228B96 /* Pods-SmudgetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmudgetUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmudgetUITests/Pods-SmudgetUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		360915A81CB4962D0011B312 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		360915AA1CB497A40011B312 /* BudgetItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetItemTableViewCell.swift; sourceTree = "<group>"; };
+		36365F731CEEA0F20099DC96 /* MOMBudget+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MOMBudget+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		366E11461CB3763000DEEFC5 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
 		366E114E1CB382AF00DEEFC5 /* Budget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		366E11501CB3906000DEEFC5 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 		366E11541CB390D600DEEFC5 /* BudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
 		367628F61CEC0C04003C743D /* MOMBudgetItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MOMBudgetItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		367628F71CEC0C04003C743D /* MOMBudgetItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOMBudgetItem.swift; sourceTree = "<group>"; };
-		367628F81CEC0C04003C743D /* MOMBudget+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MOMBudget+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		367628F91CEC0C04003C743D /* MOMBudget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOMBudget.swift; sourceTree = "<group>"; };
 		3681090A1CB204BA00E3FAA4 /* Smudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3681090D1CB204BA00E3FAA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 			children = (
 				367628F61CEC0C04003C743D /* MOMBudgetItem+CoreDataProperties.swift */,
 				367628F71CEC0C04003C743D /* MOMBudgetItem.swift */,
-				367628F81CEC0C04003C743D /* MOMBudget+CoreDataProperties.swift */,
+				36365F731CEEA0F20099DC96 /* MOMBudget+CoreDataProperties.swift */,
 				367628F91CEC0C04003C743D /* MOMBudget.swift */,
 				366E114E1CB382AF00DEEFC5 /* Budget.swift */,
 				FA69A7F11CE6CB3C00404A42 /* BudgetModelManager.swift */,
@@ -584,10 +584,10 @@
 				367628FA1CEC0C04003C743D /* MOMBudgetItem+CoreDataProperties.swift in Sources */,
 				366E11551CB390D600DEEFC5 /* BudgetViewController.swift in Sources */,
 				367628FB1CEC0C04003C743D /* MOMBudgetItem.swift in Sources */,
-				367628FC1CEC0C04003C743D /* MOMBudget+CoreDataProperties.swift in Sources */,
 				366E114F1CB382AF00DEEFC5 /* Budget.swift in Sources */,
 				366E11471CB3763000DEEFC5 /* BudgetTableViewCell.swift in Sources */,
 				360915AB1CB497A40011B312 /* BudgetItemTableViewCell.swift in Sources */,
+				36365F741CEEA0F20099DC96 /* MOMBudget+CoreDataProperties.swift in Sources */,
 				FA5179631CE9DA5100439A60 /* CurrencyModel.swift in Sources */,
 				FA69A7F21CE6CB3C00404A42 /* BudgetModelManager.swift in Sources */,
 				3681090E1CB204BA00E3FAA4 /* AppDelegate.swift in Sources */,

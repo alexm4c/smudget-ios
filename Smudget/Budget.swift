@@ -20,6 +20,10 @@ class Budget {
     var incomes:[BudgetItem]
     var expenses:[BudgetItem]
     var currency:String
+    
+    // Persistancy Attributes
+    var isChanged:Bool
+    var id:Int
 
     // MARK: Initialization
     init() {
@@ -27,6 +31,8 @@ class Budget {
         self.incomes = [BudgetItem]()
         self.expenses = [BudgetItem]()
         self.currency = "AUD"
+        self.isChanged = true
+        self.id = 0
     }
     
     func calculateBalance() -> Double {

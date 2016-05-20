@@ -2,6 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
     <entity name="Budget" representedClassName="MOMBudget" syncable="YES">
         <attribute name="currency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="budgetItem" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BudgetItem" inverseName="budget" inverseEntity="BudgetItem" syncable="YES"/>
     </entity>
@@ -12,7 +13,7 @@
         <relationship name="budget" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Budget" inverseName="budgetItem" inverseEntity="Budget" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Budget" positionX="-432" positionY="-315" width="128" height="90"/>
+        <element name="Budget" positionX="-432" positionY="-315" width="128" height="105"/>
         <element name="BudgetItem" positionX="-396" positionY="-171" width="128" height="105"/>
     </elements>
 </model>

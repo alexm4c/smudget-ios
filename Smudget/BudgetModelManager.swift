@@ -11,51 +11,73 @@ import CoreData
 
 class BudgetModelManager {
 
+    // MARK: Singleton instance getter
     static let sharedInstance = BudgetModelManager()
     
+    // MARK: Properties
     var budgets = [Budget]()
-
-    func fetchBudgets() {
+    
+    // MARK: Generating my own IDs
+    private static var lastID = 0
+    static func nextID() -> Int {
+        return ++BudgetModelManager.lastID
+    }
+    
+    func fetchBudgetObjects() -> [MOMBudget] {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = appDelegate.managedObjectContext
         let request = NSFetchRequest(entityName: "Budget")
         
         do {
-            let budgetObjects = try context.executeFetchRequest(request) as! [MOMBudget]
-            
-            for budgetObject in budgetObjects {
-                
-                let budget = Budget()
-                budget.title = budgetObject.title ?? ""
-                // Default to AUD cause it's the easy way out
-                budget.currency = budgetObject.currency ?? "AUD"
-                
-                for object in budgetObject.budgetItem! {
-                    
-                    let budgetItemObject = object as! MOMBudgetItem
-                    
-                    let budgetItemName:String = budgetItemObject.name! ?? ""
-                    let budgetItemValue:Double = Double(budgetItemObject.value!) ?? 0
-                    let budgetItemType = budgetItemObject.type
-                    
-                    let budgetItem = Budget.BudgetItem(name: budgetItemName, value: budgetItemValue)
-                    
-                    if budgetItemType == "expense" {
-                        budget.expenses.append(budgetItem)
-                    } else if budgetItemType == "income" {
-                        budget.incomes.append(budgetItem)
-                    } else {
-                        // budget item had no type, for some reason.
-                        // discard it
-                    }
-                }
-                budgets.append(budget)
-            }
-        
+            return try context.executeFetchRequest(request) as! [MOMBudget]
         } catch {
             print("There was an error fetching data: \(error)")
         }
+        
+        // There has been an error, return an empty array.
+        // This is better than crashing the application
+        // from failing to unwrap a nil return
+        return [MOMBudget]()
+    }
+    
+    func loadBudgets() {
+    
+        let budgetObjects = fetchBudgetObjects()
+    
+        for budgetObject in budgetObjects {
+            
+            let budget = Budget()
+            budget.title = budgetObject.title ?? ""
+            // Default to AUD cause it's the easy way out
+            budget.currency = budgetObject.currency ?? "AUD"
+            budget.id = Int(budgetObject.id!)
+            
+            // Budget isn't a brand new one so flip this over
+            budget.isChanged = false
+            
+            for object in budgetObject.budgetItem! {
+                
+                let budgetItemObject = object as! MOMBudgetItem
+                
+                let budgetItemName:String = budgetItemObject.name! ?? ""
+                let budgetItemValue:Double = Double(budgetItemObject.value!) ?? 0
+                let budgetItemType = budgetItemObject.type
+                
+                let budgetItem = Budget.BudgetItem(name: budgetItemName, value: budgetItemValue)
+                
+                if budgetItemType == "expense" {
+                    budget.expenses.append(budgetItem)
+                } else if budgetItemType == "income" {
+                    budget.incomes.append(budgetItem)
+                } else {
+                    // budget item had no type, for some reason.
+                    // discard it
+                }
+            }
+            budgets.append(budget)
+        }
+    
     }
     
     
@@ -107,4 +129,6 @@ class BudgetModelManager {
     }
     
     
+    
+
 }

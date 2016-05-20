@@ -2,7 +2,7 @@
 //  MOMBudget+CoreDataProperties.swift
 //  
 //
-//  Created by Alex Mc Bain on 18/05/2016.
+//  Created by Alex Mc Bain on 20/05/2016.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,8 +14,9 @@ import CoreData
 
 extension MOMBudget {
 
-    @NSManaged var title: String?
     @NSManaged var currency: String?
+    @NSManaged var title: String?
+    @NSManaged var id: NSNumber?
     @NSManaged var budgetItem: NSSet?
     
     
@@ -23,5 +24,4 @@ extension MOMBudget {
     @NSManaged func removeBudgetItemObject(value:MOMBudgetItem)
     @NSManaged func addBudgets(value:Set<MOMBudgetItem>)
     @NSManaged func removeBudgets(value:Set<MOMBudgetItem>)
-
 }
