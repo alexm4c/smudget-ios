@@ -48,6 +48,6 @@ class Budget {
         return total
     }
     func balanceTotal() -> Double {
-        return incomeTotal() + expenseTotal()
+        return incomeTotal() - expenseTotal()
     }
 }
