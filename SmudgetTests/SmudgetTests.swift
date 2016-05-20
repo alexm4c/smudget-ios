@@ -13,8 +13,6 @@ import XCTest
 class SmudgetTests: XCTestCase {
     
     func testBudget() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         let testIncomeValues:[Double] = [1, 2, 3, 4, 5]
         let testIncomeTotal:Double = 15
         
@@ -41,14 +39,12 @@ class SmudgetTests: XCTestCase {
         print("valid currencies returned by API are:")
         print(currencyList)
         
-        // If through the API call then nothing broke
-        // and that's good enough
+        // If we got through the API call
+        // and nothing broke that's good enough
         XCTAssert(true)
     }
     
     func testAPIRate() {
-        // If the API stops supporting aud and usd
-        // well damn me, I guess I'll change the test.
         let base = "AUD"
         let currencyFor = "USD"
         
@@ -57,11 +53,49 @@ class SmudgetTests: XCTestCase {
             print("exchange rate for AUD -> USD is " + String(rate))
         })
         
-        // If through the API call then nothing broke
-        // and that's good enough
+        // If we got through the API call
+        // and nothing broke that's good enough
         XCTAssert(true)
     }
     
+    func testSaveBudget() {
+        let testIncomeValues:[Double] = [1, 2, 3, 4, 5]
+        let testExpenseValues:[Double] = [6, 7, 8, 9, 10]
+        
+        let budget = Budget()
+        budget.title = "XCT TEST BUDGET"
+        budget.id = BudgetModelManager.nextID()
+        
+        for i in 0...4 {
+            let income = Budget.BudgetItem(name: "item"+String(i), value: testIncomeValues[i])
+            budget.incomes.append(income)
+            
+            let expense = Budget.BudgetItem(name: "item"+String(i), value: testExpenseValues[i])
+            budget.expenses.append(expense)
+        }
+        
+        BudgetModelManager.sharedInstance.budgets.append(budget)
+        
+        BudgetModelManager.sharedInstance.saveBudgets()
+        
+        // If we made it this far through the
+        // BudgetModelManager and back then it's all good.
+        XCTAssert(true)
+    }
     
-    
+    func testFetchBudgetData() {
+        BudgetModelManager.sharedInstance.loadBudgets()
+        
+        print("budgets currently in core data are:")
+        
+        for budget in BudgetModelManager.sharedInstance.budgets {
+            print(budget.title)
+            print(budget.id)
+        }
+        
+        // If we made it this far through the
+        // BudgetModelManager and back then it's all good.
+        XCTAssert(true)
+    }
+
 }

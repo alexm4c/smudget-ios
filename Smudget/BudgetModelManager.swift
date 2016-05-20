@@ -23,6 +23,23 @@ class BudgetModelManager {
         return ++BudgetModelManager.lastID
     }
     
+    func clearBudgetObjects() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext
+        
+        let objects = fetchBudgetObjects(nil)
+        for object in objects {
+            context.deleteObject(object)
+        }
+        
+        do {
+            try context.save()
+            
+        } catch {
+            print("There was an error saving data: \(error)")
+        }
+    }
+    
     func fetchBudgetObjects(predicate: NSPredicate?) -> [MOMBudget] {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = appDelegate.managedObjectContext
@@ -92,14 +109,18 @@ class BudgetModelManager {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = appDelegate.managedObjectContext
         
+        // First clean core data
+        clearBudgetObjects()
+        
+        // Now save everything back in
         for budget in budgets {
             
-            let existingBudgetObject = fetchBudgetObjects(NSPredicate(format: "id == %d", budget.id))
-            var budgetObject:MOMBudget! = existingBudgetObject.first
+//            let existingBudgetObject = fetchBudgetObjects(NSPredicate(format: "id == %d", budget.id))
+//            var budgetObject:MOMBudget! = existingBudgetObject.first
             
-            if budgetObject == nil {
-                budgetObject = NSEntityDescription.insertNewObjectForEntityForName("Budget", inManagedObjectContext: context) as? MOMBudget
-            }
+//            if budgetObject == nil {
+            let budgetObject:MOMBudget! = NSEntityDescription.insertNewObjectForEntityForName("Budget", inManagedObjectContext: context) as? MOMBudget
+//            }
             
             budgetObject.title = budget.title
             budgetObject.currency = budget.currency
