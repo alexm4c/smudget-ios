@@ -23,11 +23,15 @@ class BudgetModelManager {
         return ++BudgetModelManager.lastID
     }
     
-    func fetchBudgetObjects() -> [MOMBudget] {
+    func fetchBudgetObjects(predicate: NSPredicate?) -> [MOMBudget] {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = appDelegate.managedObjectContext
         let request = NSFetchRequest(entityName: "Budget")
+        
+        if predicate != nil {
+            request.predicate = predicate
+        }
         
         do {
             return try context.executeFetchRequest(request) as! [MOMBudget]
@@ -43,7 +47,7 @@ class BudgetModelManager {
     
     func loadBudgets() {
     
-        let budgetObjects = fetchBudgetObjects()
+        let budgetObjects = fetchBudgetObjects(nil)
     
         for budgetObject in budgetObjects {
             
@@ -52,9 +56,6 @@ class BudgetModelManager {
             // Default to AUD cause it's the easy way out
             budget.currency = budgetObject.currency ?? "AUD"
             budget.id = Int(budgetObject.id!)
-            
-            // Budget isn't a brand new one so flip this over
-            budget.isChanged = false
             
             for object in budgetObject.budgetItem! {
                 
@@ -87,8 +88,13 @@ class BudgetModelManager {
         let context = appDelegate.managedObjectContext
         
         for budget in budgets {
-                        
-            let budgetObject = NSEntityDescription.insertNewObjectForEntityForName("Budget", inManagedObjectContext: context) as! MOMBudget
+            
+            let existingBudgetObject = fetchBudgetObjects(NSPredicate(format: "id == %d", budget.id))
+            var budgetObject:MOMBudget! = existingBudgetObject.first
+            
+            if budgetObject == nil {
+                budgetObject = NSEntityDescription.insertNewObjectForEntityForName("Budget", inManagedObjectContext: context) as? MOMBudget
+            }
             
             budgetObject.title = budget.title
             budgetObject.currency = budget.currency

@@ -21,8 +21,7 @@ class Budget {
     var expenses:[BudgetItem]
     var currency:String
     
-    // Persistancy Attributes
-    var isChanged:Bool
+    // Persistancy Attribute
     var id:Int
 
     // MARK: Initialization
@@ -31,7 +30,6 @@ class Budget {
         self.incomes = [BudgetItem]()
         self.expenses = [BudgetItem]()
         self.currency = "AUD"
-        self.isChanged = true
         self.id = 0
     }
     
