@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ExistingBudgetViewController: UITableViewController {
     
@@ -25,6 +26,7 @@ class ExistingBudgetViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! BudgetTableViewCell
         let budget = BudgetModelManager.sharedInstance.budgets[indexPath.row]
         cell.budgetTitleLabel.text = budget.title
+        
         return cell
     }
     
@@ -50,4 +52,14 @@ class ExistingBudgetViewController: UITableViewController {
         }
     }
     
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        BudgetModelManager.sharedInstance.budgets.shuffleInPlace()
+        self.tableView.reloadData()
+        
+        let alert = UIAlertController(title: "Whoops!", message: "", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: false, completion: nil)
+    }
+
 }

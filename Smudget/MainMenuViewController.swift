@@ -50,7 +50,4 @@ class MainMenuViewController: UIViewController {
             }
         }
     }
-    // Navigation to Existing requires no logic
-    // and is done through a storyboard segue
-    
 }

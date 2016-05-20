@@ -12,6 +12,7 @@
 		36365F741CEEA0F20099DC96 /* MOMBudget+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36365F731CEEA0F20099DC96 /* MOMBudget+CoreDataProperties.swift */; };
 		36365F761CEEB4800099DC96 /* README.TXT in Resources */ = {isa = PBXBuildFile; fileRef = 36365F751CEEB4800099DC96 /* README.TXT */; };
 		36365F801CEEB5F00099DC96 /* SmudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36365F7F1CEEB5F00099DC96 /* SmudgetTests.swift */; };
+		3668327C1CEEEA00002B0E1C /* shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3668327B1CEEEA00002B0E1C /* shuffle.swift */; };
 		366E11471CB3763000DEEFC5 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E11461CB3763000DEEFC5 /* BudgetTableViewCell.swift */; };
 		366E114F1CB382AF00DEEFC5 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E114E1CB382AF00DEEFC5 /* Budget.swift */; };
 		366E11511CB3906000DEEFC5 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E11501CB3906000DEEFC5 /* MainMenuViewController.swift */; };
@@ -133,6 +134,7 @@
 		36365F7F1CEEB5F00099DC96 /* SmudgetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmudgetTests.swift; sourceTree = "<group>"; };
 		36365F811CEEB5F00099DC96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3668327A1CEEE71F002B0E1C /* BudgetInfoToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BudgetInfoToday.entitlements; sourceTree = "<group>"; };
+		3668327B1CEEEA00002B0E1C /* shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shuffle.swift; sourceTree = "<group>"; };
 		366E11461CB3763000DEEFC5 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
 		366E114E1CB382AF00DEEFC5 /* Budget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		366E11501CB3906000DEEFC5 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				366E114E1CB382AF00DEEFC5 /* Budget.swift */,
 				FA69A7F11CE6CB3C00404A42 /* BudgetModelManager.swift */,
 				FA5179621CE9DA5000439A60 /* CurrencyModel.swift */,
+				3668327B1CEEEA00002B0E1C /* shuffle.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -440,7 +443,7 @@
 						DevelopmentTeam = 8LELQL34M8;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -649,6 +652,7 @@
 				366E11511CB3906000DEEFC5 /* MainMenuViewController.swift in Sources */,
 				367628FA1CEC0C04003C743D /* MOMBudgetItem+CoreDataProperties.swift in Sources */,
 				366E11551CB390D600DEEFC5 /* BudgetViewController.swift in Sources */,
+				3668327C1CEEEA00002B0E1C /* shuffle.swift in Sources */,
 				367628FB1CEC0C04003C743D /* MOMBudgetItem.swift in Sources */,
 				366E114F1CB382AF00DEEFC5 /* Budget.swift in Sources */,
 				366E11471CB3763000DEEFC5 /* BudgetTableViewCell.swift in Sources */,
