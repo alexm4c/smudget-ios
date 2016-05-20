@@ -15,7 +15,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
+        
+        let balance:Double = 56
+        let budgetTitle = "June Budget"
+        
+        textLabel.text = budgetTitle + " has a balance of " + String(format: "%.2f", balance)
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,7 +36,5 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
         completionHandler(NCUpdateResult.NewData)
     }
-    
-    
     
 }

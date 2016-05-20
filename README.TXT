@@ -17,6 +17,10 @@ a. Adaptive Layout
 - A safe bet would be iPhone 6s P+L and iPad P+L.
 
 b. App Extension
+- See the BudgetInfoToday group
+- Data is hard coded :( but that only because I left this bit too late
+- I managed to get a student dev account through RMIT
+- but I didn't realise it was REALLY silly and I have to get in touch with beau again to get an app group or something
 
 c. Data Persistence
 - Code associated with data persistence is within BudgetModelManager
@@ -32,8 +36,10 @@ e. iOS Framework
 - The code associated is in the PieChartViewController
 
 f. Unit Tests
+- Done, see the SmudgetTests group
 
 g. Extra feature
 - Don't know... learnt loads of stuff not in the lectures, but no one BIG thing
 - OH, probably the picker view might count, used to select the base currency in BudgetVC
 - It's a bit of a hack job but it works
+- Also the 3rd Party Charts library

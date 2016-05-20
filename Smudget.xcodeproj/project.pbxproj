@@ -26,7 +26,6 @@
 		368109801CB2270C00E3FAA4 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368109791CB2270600E3FAA4 /* Charts.framework */; };
 		368109811CB2270C00E3FAA4 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 368109791CB2270600E3FAA4 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		368109851CB22BE600E3FAA4 /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368109841CB22BE600E3FAA4 /* PieChartViewController.swift */; };
-		3687198D1CB768FB00D4780D /* SmudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3687198C1CB768FB00D4780D /* SmudgetUITests.swift */; };
 		64E16620B9FC5C41330CC421 /* Pods_Smudget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAED4F5E215685FB5F0A25D7 /* Pods_Smudget.framework */; };
 		C42E50368DD568A44C37D1F2 /* Pods_SmudgetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 104D95B298AED498835AD8C1 /* Pods_SmudgetUITests.framework */; };
 		FA5179631CE9DA5100439A60 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5179621CE9DA5000439A60 /* CurrencyModel.swift */; };
@@ -133,6 +132,7 @@
 		36365F7D1CEEB5F00099DC96 /* SmudgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmudgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36365F7F1CEEB5F00099DC96 /* SmudgetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmudgetTests.swift; sourceTree = "<group>"; };
 		36365F811CEEB5F00099DC96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3668327A1CEEE71F002B0E1C /* BudgetInfoToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BudgetInfoToday.entitlements; sourceTree = "<group>"; };
 		366E11461CB3763000DEEFC5 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
 		366E114E1CB382AF00DEEFC5 /* Budget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		366E11501CB3906000DEEFC5 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -149,8 +149,6 @@
 		368109711CB2270600E3FAA4 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		368109841CB22BE600E3FAA4 /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
 		368719821CB7677300D4780D /* SmudgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmudgetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		368719861CB7677300D4780D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3687198C1CB768FB00D4780D /* SmudgetUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmudgetUITests.swift; path = ../Smudget/SmudgetUITests.swift; sourceTree = "<group>"; };
 		5144C55411E803D6F42BB0BD /* Pods-Smudget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smudget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smudget/Pods-Smudget.release.xcconfig"; sourceTree = "<group>"; };
 		60E793237537A31E31BA9831 /* Pods-Smudget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smudget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smudget/Pods-Smudget.debug.xcconfig"; sourceTree = "<group>"; };
 		768A688EB41E60FA0D110C47 /* Pods-SmudgetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmudgetUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmudgetUITests/Pods-SmudgetUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 				FA69A7A41CE6AE8C00404A42 /* CoreData.framework */,
 				368109711CB2270600E3FAA4 /* Charts.xcodeproj */,
 				3681090C1CB204BA00E3FAA4 /* Smudget */,
-				368719831CB7677300D4780D /* SmudgetUITests */,
 				FA5C3C641CEAFCD100BA80F4 /* BudgetInfoToday */,
 				36365F7E1CEEB5F00099DC96 /* SmudgetTests */,
 				3681090B1CB204BA00E3FAA4 /* Products */,
@@ -299,15 +296,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		368719831CB7677300D4780D /* SmudgetUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3687198C1CB768FB00D4780D /* SmudgetUITests.swift */,
-				368719861CB7677300D4780D /* Info.plist */,
-			);
-			path = SmudgetUITests;
-			sourceTree = "<group>";
-		};
 		5324A1D46967F244C144DD6A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +320,7 @@
 		FA5C3C641CEAFCD100BA80F4 /* BudgetInfoToday */ = {
 			isa = PBXGroup;
 			children = (
+				3668327A1CEEE71F002B0E1C /* BudgetInfoToday.entitlements */,
 				FA5C3C651CEAFCD100BA80F4 /* TodayViewController.swift */,
 				FA5C3C671CEAFCD100BA80F4 /* MainInterface.storyboard */,
 				FA5C3C6A1CEAFCD100BA80F4 /* Info.plist */,
@@ -461,6 +450,12 @@
 					};
 					FA5C3C601CEAFCD100BA80F4 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 8LELQL34M8;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -671,7 +666,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3687198D1CB768FB00D4780D /* SmudgetUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,10 +896,14 @@
 		FA5C3C6F1CEAFCD100BA80F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BudgetInfoToday/BudgetInfoToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BudgetInfoToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alexmcbain.Smudget.BudgetInfoToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -913,10 +911,14 @@
 		FA5C3C701CEAFCD100BA80F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BudgetInfoToday/BudgetInfoToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BudgetInfoToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alexmcbain.Smudget.BudgetInfoToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
