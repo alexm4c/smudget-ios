@@ -12,9 +12,7 @@ import XCTest
 
 class SmudgetTests: XCTestCase {
     
-    func testBudget() {
-        let testIncomeValues:[Double] = [1, 2, 3, 4, 5]
-        let testIncomeTotal:Double = 15
+    func testBudgetExpenseCalculation() {
         
         let testExpenseValues:[Double] = [6, 7, 8, 9, 10]
         let testExpenseTotal:Double = 40
@@ -22,43 +20,88 @@ class SmudgetTests: XCTestCase {
         let budget = Budget()
         
         for i in 0...4 {
-            let income = Budget.BudgetItem(name: "item"+String(i), value: testIncomeValues[i])
-            budget.incomes.append(income)
-            
             let expense = Budget.BudgetItem(name: "item"+String(i), value: testExpenseValues[i])
             budget.expenses.append(expense)
         }
         
         XCTAssert(budget.expenseTotal() == testExpenseTotal)
-        XCTAssert(budget.incomeTotal() == testIncomeTotal)
-        XCTAssert(budget.balanceTotal() == testIncomeTotal + testExpenseTotal)
     }
     
-    func testAPICurrencyList() {
-        let currencyList = CurrencyModel().currencyList
-        print("valid currencies returned by API are:")
-        print(currencyList)
+    func testBudgetIncomeCalculation() {
         
-        // If we got through the API call
-        // and nothing broke that's good enough
-        XCTAssert(true)
+        let testIncomeValues:[Double] = [1, 2, 3, 4, 5]
+        let testIncomeTotal:Double = 15
+        
+        let budget = Budget()
+        
+        for i in 0...4 {
+            let income = Budget.BudgetItem(name: "item"+String(i), value: testIncomeValues[i])
+            budget.incomes.append(income)
+        }
+        
+    	XCTAssert(budget.incomeTotal() == testIncomeTotal)
+    
+    }
+
+
+    func testAPICurrencyList() {
+        
+        let asyncExpectation = expectationWithDescription("fetching currency list")
+        var currencyList:[String]?
+        
+        CurrencyModel().getCurrencyListFromAPI({
+            list in
+            
+            print("valid currencies returned by API are:")
+            print(list)
+            
+            currencyList = list
+            
+            asyncExpectation.fulfill()
+            
+        })
+        
+        
+        
+        self.waitForExpectationsWithTimeout(5, handler: {
+            error in
+            
+            XCTAssertNil(error, "Something went horribly wrong")
+            XCTAssert(currencyList != nil)
+            XCTAssert(!currencyList!.isEmpty)
+        })
     }
     
     func testAPIRate() {
+        
+        let asyncExpectation = expectationWithDescription("fetching rate")
+        
         let base = "AUD"
         let currencyFor = "USD"
+        
+        var returnedRate:Double?
         
         CurrencyModel().getRateFromAPI(base, forCurrency: currencyFor, onResponse: {
             rate in
             print("exchange rate for AUD -> USD is " + String(rate))
+            
+            returnedRate = rate
+            
+            asyncExpectation.fulfill()
+
         })
+
         
-        // If we got through the API call
-        // and nothing broke that's good enough
-        XCTAssert(true)
+        self.waitForExpectationsWithTimeout(5, handler: {
+            error in
+            
+            XCTAssertNil(error, "Something went horribly wrong")
+            XCTAssert(returnedRate != nil)
+        })
     }
     
-    func testSaveBudget() {
+    
+    func testBudgetModel() {
         let testIncomeValues:[Double] = [1, 2, 3, 4, 5]
         let testExpenseValues:[Double] = [6, 7, 8, 9, 10]
         
@@ -75,27 +118,14 @@ class SmudgetTests: XCTestCase {
         }
         
         BudgetModelManager.sharedInstance.budgets.append(budget)
-        
         BudgetModelManager.sharedInstance.saveBudgets()
         
-        // If we made it this far through the
-        // BudgetModelManager and back then it's all good.
-        XCTAssert(true)
-    }
-    
-    func testFetchBudgetData() {
-        BudgetModelManager.sharedInstance.loadBudgets()
+        // Saved budgets, let's see if it worked
         
-        print("budgets currently in core data are:")
+        let predicate = NSPredicate(format: "title = %@", "XCT TEST BUDGET")
+        let budgetObjects = BudgetModelManager.sharedInstance.fetchBudgetObjects(predicate)
         
-        for budget in BudgetModelManager.sharedInstance.budgets {
-            print(budget.title)
-            print(budget.id)
-        }
-        
-        // If we made it this far through the
-        // BudgetModelManager and back then it's all good.
-        XCTAssert(true)
+        XCTAssert(!budgetObjects.isEmpty)
     }
 
 }
